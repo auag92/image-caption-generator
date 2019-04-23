@@ -3,3 +3,4 @@ nb_models/*
 __pycache__
 data/*
 .ipynb_checkpoints
+fede/cs231n*
