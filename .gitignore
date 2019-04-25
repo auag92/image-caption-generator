@@ -4,3 +4,4 @@ __pycache__
 data/*
 .ipynb_checkpoints
 fede/cs231n*
+fede/data*

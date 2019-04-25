@@ -17,7 +17,7 @@ def gumbel_softmax_sample(trng, logits, tau, U=None, hard=False):
   y = nn.softmax(ylog/tau)
 
   if hard:
-      print 'Using hard gumbel'
+      print('Using hard gumbel')
       # Still working on this
       #one_hot = tensor.cast( tensor.eq(y, y.max(axis=-1,keepdims=1)) ,dtype=config.floatX)
       #y = theano.gradient.disconnected_grad(one_hot -y) + y
