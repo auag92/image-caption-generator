@@ -1,13 +1,13 @@
-import torch
-import torchvision.transforms as transforms
-import torch.utils.data as data
 import os
+import nltk
+import torch
 import pickle
 import numpy as np
-import nltk
 from PIL import Image
-from build_vocab import Vocabulary
+import torch.utils.data as data
 from pycocotools.coco import COCO
+from build_vocab import Vocabulary
+import torchvision.transforms as transforms
 
 
 class CocoDataset(data.Dataset):
@@ -27,6 +27,7 @@ class CocoDataset(data.Dataset):
         self.vocab = vocab
         self.transform = transform
 
+        
     def __getitem__(self, index):
         """Returns one data pair (image and caption)."""
         coco = self.coco
@@ -49,6 +50,7 @@ class CocoDataset(data.Dataset):
         target = torch.Tensor(caption)
         return image, target
 
+    
     def __len__(self):
         return len(self.ids)
 
